@@ -1,4 +1,5 @@
 function [colors] = test(image, cameraParams, R, t)
+    [image,newOrigin] = undistortImage(image,cameraParams,'OutputView','full');
     blue_test_image = get_blue_coordinates(image);
     green_test_image = get_green_coordinates(image);
     yellow_test_image = get_yellow_coordinates(image);
