@@ -1,0 +1,2 @@
+function [] = camera_algorithm(img, color_order)
+    green_coordinates = get_green_coordinates()

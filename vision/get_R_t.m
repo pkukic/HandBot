@@ -1,9 +1,9 @@
 function [R, t] = get_R_t(img, cameraParams)
     % using the instrinsic parameters we can undistort the image if necessary 
-    [img_undist, newOrigin] = undistortImage(img,cameraParams,'OutputView','full');
+    % [img_undist, newOrigin] = undistortImage(img,cameraParams,'OutputView','full');
 
     % detect corners in the image
-    [imagePoints,boardSize] = detectCheckerboardPoints(img_undist);
+    [imagePoints,boardSize] = detectCheckerboardPoints(img);
 
     % set size of a square in milimeters and calculate locations in the checkerboard frame
     squareSize = 18;
@@ -13,10 +13,7 @@ function [R, t] = get_R_t(img, cameraParams)
     checkerboard_points_h = [checkerboard_points zeros(size(checkerboard_points,1),1) ones(size(checkerboard_points,1),1)];
     
     % measure the pose of the pattern in the frame {R}
-    % T = [0 -1 0 217;
-    %      -1 0 0 147;
-    %      0 0 -1 0;
-    %      0 0 0 1];
+
     T = [0 -1 0 217;
          -1 0 0 73;
          0 0 -1 0;
