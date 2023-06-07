@@ -1,5 +1,4 @@
 function [coordinates] = get_green_coordinates(image)
-    image = image(:,:,(1:3));
     gauss_filt = fspecial('gaussian', [5,5], 1.5);
     image = imfilter(image, gauss_filt);
     image_hsv = rgb2hsv(image);
@@ -18,11 +17,11 @@ function [coordinates] = get_green_coordinates(image)
     stats = regionprops(image_single_centroid, 'Centroid', 'Area');
     centroid = stats.Centroid;
 
-    imshow(image_single_centroid);
-    figure;
-    imshow(image);
-    hold on;
-    plot(centroid(1), centroid(2), 'r*'); % Plot the centroid as a red star
-    hold off;
+    % imshow(image_single_centroid);
+    % figure;
+    % imshow(image);
+    % hold on;
+    % plot(centroid(1), centroid(2), 'r*');
+    % hold off;
 
     coordinates = [centroid(1), centroid(2)];
