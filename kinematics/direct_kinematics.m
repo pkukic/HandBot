@@ -33,7 +33,7 @@ function location = direct_kinematics(angle_motor_1, angle_motor_2, angle_motor_
     T23(3, :) = [0 0 1 0];
     T23(4, :) = [0 0 0 1];
 
-    T03 = T01 * T12 * T23;
+    T03 = T01 * T12 * T23;  
     q4 = acos(-(T03(3, 1)));
     disp(q4);
     
@@ -55,6 +55,6 @@ function location = direct_kinematics(angle_motor_1, angle_motor_2, angle_motor_
     z = T0T(3, 4);
 
     % Return the location as a triple of three floats
-    location = [x, y, z - 20];
+    location = [x, y, z];
     
 end
