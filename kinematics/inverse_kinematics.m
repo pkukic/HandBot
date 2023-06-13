@@ -2,7 +2,7 @@ function angles = inverse_kinematics(X, Y, Z)
     
     a1 = 88.0;
     a2 = 177.0;
-    a3 = 177.0;
+    a3 = 185.0;
     a4 = 68.0;
 
     Z = Z + 20;

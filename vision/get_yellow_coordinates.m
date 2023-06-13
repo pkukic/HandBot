@@ -14,14 +14,15 @@ function [coordinates] = get_yellow_coordinates(image)
     se = strel("square", 7);
     image_closed = imclose(image_extracted, se);
     image_single_centroid = only_largest_area(image_closed);
-    stats = regionprops(image_single_centroid, 'Centroid', 'Area');
-    centroid = stats.Centroid;
 
-    % imshow(image_single_centroid);
+    %imshow(image_single_centroid);
     % figure;
     % imshow(image);
     % hold on;
     % plot(centroid(1), centroid(2), 'r*');
     % hold off;
+
+    stats = regionprops(image_single_centroid, 'Centroid', 'Area');
+    centroid = stats.Centroid;
     
     coordinates = [centroid(1), centroid(2)];

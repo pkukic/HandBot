@@ -1,4 +1,4 @@
-function [p1, p2, p3, p4, p5, p6] = camera(color_order, cameraParams, R, t)
+function list_of_points = camera(color_order, cameraParams, R, t)
     % color_order is like ['g', 'y', 'b']
     % take the image
     camera_info = imaqhwinfo('winvideo', 2);
@@ -23,3 +23,4 @@ function [p1, p2, p3, p4, p5, p6] = camera(color_order, cameraParams, R, t)
 
     % return the points
     [p1, p2, p3, p4, p5, p6] = camera_algorithm(img, color_order, R, t, cameraParams);
+    list_of_points = [p1; p2; p3; p4; p5; p6];

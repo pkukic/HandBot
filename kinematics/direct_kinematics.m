@@ -2,7 +2,7 @@ function location = direct_kinematics(angle_motor_1, angle_motor_2, angle_motor_
 
     a1 = 88.0;
     a2 = 177.0;
-    a3 = 177.0;
+    a3 = 185.0;
     a4 = 68.0;
 
     q1 = deg2rad(angle_motor_1);

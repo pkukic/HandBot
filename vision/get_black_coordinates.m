@@ -8,6 +8,8 @@ function [p1, p2, p3] = get_black_coordinates(image)
     se = strel("square", 20);
     image_closed = imclose(image_extracted, se);
 
+    % imshow(image_closed)
+
     image_single_centroid = only_largest_area(image_closed);
 
     % Perform connected component analysis
