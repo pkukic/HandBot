@@ -1,2 +1,2 @@
 # HandBot
-For automating jobs which can be done with robot hands
+Robot grabber in Matlab
