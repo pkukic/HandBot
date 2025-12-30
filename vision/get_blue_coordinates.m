@@ -17,11 +17,9 @@ function [coordinates] = get_blue_coordinates(image)
     stats = regionprops(image_single_centroid, 'Centroid', 'Area');
     centroid = stats.Centroid;
 
-    % imshow(image_single_centroid);
-    % figure;
-    % imshow(image);
-    % hold on;
-    % plot(centroid(1), centroid(2), 'r*');
-    % hold off;
+    imshow(image_single_centroid);
+    hold on;
+    plot(centroid(1), centroid(2), 'r*');
+    hold off;
 
     coordinates = [centroid(1), centroid(2)];

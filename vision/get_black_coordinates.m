@@ -70,11 +70,13 @@ function [p1, p2, p3] = get_black_coordinates(image)
     p2 = [x2,  y2];
     p3 = [x3, y3];
 
-    % imshow(image_single_centroid);
-    % hold on;
-    % % plot([top_left(1), top_right(1), bottom_left(1), bottom_right(1)], [top_left(2), top_right(2), bottom_left(2), bottom_right(2)], 'r*');
-    % % plot([x_top, x_bottom], [y_top, y_bottom], 'r*');
-    % plot([x1, x2, x3], [y1, y2, y3], 'r*');
-    % %plot([x_top, x_bottom, x_left, x_right], [y_top, y_bottom, y_left, y_right], 'r*');
-    % hold off;
+    imshow(image_single_centroid)
+    hold on;
+    rectangle('Position', [boundingBox(1), boundingBox(2), boundingBox(3), boundingBox(4)],...  %right, top, width, height
+    'EdgeColor','r','LineWidth',2)
+    % plot([top_left(1), top_right(1), bottom_left(1), bottom_right(1)], [top_left(2), top_right(2), bottom_left(2), bottom_right(2)], 'r*');
+    % plot([x_top, x_bottom], [y_top, y_bottom], 'r*');
+    plot([x1, x2, x3], [y1, y2, y3], 'r*');
+    %plot([x_top, x_bottom, x_left, x_right], [y_top, y_bottom, y_left, y_right], 'r*');
+    hold off;
     

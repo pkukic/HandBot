@@ -1,8 +1,8 @@
 load('cameraParams.mat');
 
 % img = imread('calculate_transformation.jpg');
-camera_info = imaqhwinfo('winvideo', 2);
-video_obj = videoinput('winvideo', camera_info.DeviceID, camera_info.DefaultFormat);
+camera_info = imaqhwinfo('linuxvideo', 2);
+video_obj = videoinput('linuxvideo', camera_info.DeviceID, camera_info.DefaultFormat);
 video_obj.ReturnedColorSpace = 'rgb';
 f = figure('Visible', 'off'); 
 vidRes = video_obj.VideoResolution;
